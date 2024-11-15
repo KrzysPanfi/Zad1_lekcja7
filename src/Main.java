@@ -65,7 +65,7 @@ public class Main {
             }
         }
         wynik.add("Zad2: ");
-        wynik.add(Integer.toString(naj)+" dziesiętna");
+        wynik.add(naj +" dziesiętna");
         wynik.add(decimalToBinary(naj)+" binarna");
         return wynik;
     }
@@ -81,7 +81,7 @@ public class Main {
             }
         }
         wynik.add("Zad3: ");
-        wynik.add(Integer.toString(count)+" liczba 9 cyfrowych liczb");
+        wynik.add(count +" liczba 9 cyfrowych liczb");
         wynik.add(decimalToBinary(sum)+" suma");
         return wynik;
     }
@@ -94,7 +94,7 @@ public class Main {
         StringBuilder binaryNum = new StringBuilder();
         while (quotient > 0) {
             remainder = quotient % 2;
-            binaryNum.insert(0, Integer.toString(remainder));
+            binaryNum.insert(0, remainder);
             quotient = quotient / 2;
         }
         return binaryNum.toString();
