@@ -9,9 +9,14 @@ public class Main {
     public static void main(String[] args) {
         String filepath = "liczby.txt";
         ArrayList<String> liczby = Download(filepath);
-        System.out.println(zad1(liczby));
+        System.out.println("Zad1:");
+        System.out.println(zad1(liczby)+" liczb parzystych");
         ArrayList<String>wynik=zad2(liczby);
         for (String i:wynik){
+            System.out.println(i);
+        }
+        ArrayList<String>wynik2=zad3(liczby);
+        for(String i:wynik2){
             System.out.println(i);
         }
     }
@@ -49,7 +54,7 @@ public class Main {
         return count;
     }
     public static ArrayList<String>zad2(ArrayList<String>liczby){
-        ArrayList<String>Wynik=new ArrayList<>();
+        ArrayList<String>wynik=new ArrayList<>();
         int naj=0;
         for(String i:liczby){
             if(!i.equals("")) {
@@ -59,9 +64,26 @@ public class Main {
                 }
             }
         }
-        Wynik.add(Integer.toString(naj));
-        Wynik.add(decimalToBinary(naj));
-        return Wynik;
+        wynik.add("Zad2: ");
+        wynik.add(Integer.toString(naj)+" dziesiętna");
+        wynik.add(decimalToBinary(naj)+" binarna");
+        return wynik;
+    }
+    public static ArrayList<String> zad3(ArrayList<String>liczby){
+        ArrayList<String>wynik=new ArrayList<>();
+        int count=0;
+        int sum=0;
+        for(String i:liczby){
+            char[]chars=i.toCharArray();
+            if(chars.length==9){
+                count++;
+                sum+=Integer.parseInt(i,2);
+            }
+        }
+        wynik.add("Zad3: ");
+        wynik.add(Integer.toString(count)+" liczba 9 cyfrowych liczb");
+        wynik.add(decimalToBinary(sum)+" suma");
+        return wynik;
     }
    public static String decimalToBinary(int n)
     {
